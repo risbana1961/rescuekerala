@@ -6,25 +6,37 @@
 
 [![Join Kerala Rescue Slack channel](https://i.imgur.com/V7jxjak.png)](http://bit.ly/rescuechat)
 
+
+## Easy Setup for quick contributions for Apple Mac and Ubuntu Linux
+```
+git clone https://github.com/IEEEKeralaSection/rescuekerala.git
+cd rescuekerala
+sh easy-setup.sh
+```
+
 ## Table of Contents
-- [Requirements](#requirements)
-    - [Docker](#docker)
-    - [Python 3](#python-3)
-    - [Postgres](#postgres)
-    - [Git](#git)
-    - [Redis](#redis)
-    - [Setting up an S3 Account](#setting-up-an-s3-account)
-- [Getting started](#getting-started)
-    - [Setting up a development environment](#setting-up-a-development-environment)
-    - [Setup using docker-compose](#setup-using-docker-compose)
-- [Creating migration files](#creating-migration-files)
-- [Running tests](#running-tests)
-- [Enable HTTPS connections](#enable-https-connections)
+- [Easy Setup for quick contributions for Apple Mac and Ubuntu Linux](#easy-setup-for-quick-contributions-for-apple-mac-and-ubuntu-linux)
+- [Table of Contents](#table-of-contents)
+	- [Requirements](#requirements)
+		- [Docker](#docker)
+		- [Python 3](#python-3)
+		- [Postgres](#postgres)
+		- [Git](#git)
+		- [Redis](#redis)
+		- [Setting up an S3 Account](#setting-up-an-s3-account)
+	- [Getting Started](#getting-started)
+	- [Setting up a development environment](#setting-up-a-development-environment)
+	- [Setup using docker-compose](#setup-using-docker-compose)
+		- [Pre-requisites](#pre-requisites)
+	- [Creating migration files](#creating-migration-files)
+	- [Running tests](#running-tests)
+	- [Enable HTTPS connections](#enable-https-connections)
+		- [Note: Make sure that this change is removed before pushing your changes back to git](#note-make-sure-that-this-change-is-removed-before-pushing-your-changes-back-to-git)
 - [How can you help?](#how-can-you-help)
-    - [Verification of Rescue Requests](#verification-of-rescue-requests)
-    - [Contribution Guidelines](#contribution-guidelines)
-    - [Testing PRs](#by-testing)
-    - [Submitting PRs](#submitting-pull-requests)
+		- [Verification of Rescue Requests](#verification-of-rescue-requests)
+		- [Contribution Guidelines](#contribution-guidelines)
+		- [Testing Pull Requests](#testing-pull-requests)
+	- [Flood Map](#flood-map)
 
 <hr>
 
