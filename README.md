@@ -33,11 +33,10 @@ sh easy-setup.sh
 	- [Enable HTTPS connections](#enable-https-connections)
 		- [Note: Make sure that this change is removed before pushing your changes back to git](#note-make-sure-that-this-change-is-removed-before-pushing-your-changes-back-to-git)
 - [How can you help?](#how-can-you-help)
-		- [Verification of Rescue Requests](#verification-of-rescue-requests)
-		- [Contribution Guidelines](#contribution-guidelines)
-		- [Testing Pull Requests](#testing-pull-requests)
-	- [Flood Map](#flood-map)
-
+    - [Verification of Rescue Requests](#verification-of-rescue-requests)
+    - [Contribution Guidelines](#contribution-guidelines)
+    - [Testing PRs](#by-testing)
+    - [Submitting PRs](#submitting-pull-requests)
 <hr>
 
 ### Requirements
