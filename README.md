@@ -6,14 +6,6 @@
 
 [![Join Kerala Rescue Slack channel](https://i.imgur.com/V7jxjak.png)](http://bit.ly/rescuechat)
 
-
-## Easy Setup for quick contributions for Apple Mac and Ubuntu Linux
-```
-git clone https://github.com/IEEEKeralaSection/rescuekerala.git
-cd rescuekerala
-sh easy-setup.sh
-```
-
 ## Table of Contents
 - [Easy Setup for quick contributions for Apple Mac and Ubuntu Linux](#easy-setup-for-quick-contributions-for-apple-mac-and-ubuntu-linux)
 - [Table of Contents](#table-of-contents)
@@ -38,6 +30,13 @@ sh easy-setup.sh
     - [Testing PRs](#by-testing)
     - [Submitting PRs](#submitting-pull-requests)
 <hr>
+
+## Easy Setup for quick contributions for Apple Mac and Ubuntu Linux
+```
+git clone https://github.com/IEEEKeralaSection/rescuekerala.git
+cd rescuekerala
+sh easy-setup.sh
+```
 
 ### Requirements
 [^top](#table-of-contents)
