@@ -16,8 +16,10 @@ import dj_database_url
 import raven
 import datetime
 
+
 def get_list(text):
     return [item.strip() for item in text.split(',')]
+
 
 env = environ.Env(
     # set casting, default value
@@ -37,14 +39,12 @@ SECRET_KEY = env('SECRET_KEY')
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # ALLOWED_HOSTS = ['127.0.0.1', 'keralarescue.herokuapp.com', 'keralarescue.in', 'www.keralarescue.in', 'localhost']
 ALLOWED_HOSTS = get_list(os.environ.get('ALLOWED_HOSTS'))
 INTERNAL_IPS = get_list(os.environ.setdefault('INTERNAL_IPS', ''))
-
 
 RAVEN_CONFIG = {
     'dsn': env('SENTRY_DSN'),
@@ -53,12 +53,11 @@ RAVEN_CONFIG = {
     # 'release': raven.fetch_git_sha(os.path.abspath(os.pardir)),
 }
 
-
-
 # Application definition
 
 INSTALLED_APPS = [
     'mainapp.apps.MainappConfig',
+    'inventory.apps.InventoryConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -77,7 +76,6 @@ INSTALLED_APPS = [
 
 if DEBUG:
     INSTALLED_APPS += ['debug_toolbar', 'pympler']
-
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -107,7 +105,7 @@ DEBUG_TOOLBAR_PANELS = [
     'debug_toolbar.panels.signals.SignalsPanel',
     'debug_toolbar.panels.logging.LoggingPanel',
     'debug_toolbar.panels.redirects.RedirectsPanel',
-    ]
+]
 
 ROOT_URLCONF = 'floodrelief.urls'
 
@@ -174,8 +172,8 @@ LOGGING = {
     'disable_existing_loggers': False,
     'formatters': {
         'verbose': {
-            'format' : "[%(asctime)s] %(levelname)s [%(name)s:%(lineno)s] %(message)s",
-            'datefmt' : "%d/%b/%Y %H:%M:%S"
+            'format': "[%(asctime)s] %(levelname)s [%(name)s:%(lineno)s] %(message)s",
+            'datefmt': "%d/%b/%Y %H:%M:%S"
         },
         'simple': {
             'format': '%(levelname)s %(message)s'
@@ -219,7 +217,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
@@ -228,25 +225,24 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = (
-	os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'static'),
 )
 bucket_name = os.environ.get('AWS_STORAGE_BUCKET_NAME')
-S3_URL = "https://{}.s3.ap-south-1.amazonaws.com".format(bucket_name,)
+S3_URL = "https://{}.s3.ap-south-1.amazonaws.com".format(bucket_name, )
 
-
-if os.environ.get('USE_S3','').lower() == "true" :
-    AWS_STORAGE_BUCKET_NAME=bucket_name
-    AWS_ACCESS_KEY_ID=os.environ.get("AWS_ACCESS_KEY_ID")
-    AWS_SECRET_ACCESS_KEY=os.environ.get("AWS_SECRET_ACCESS_KEY")
-    AWS_QUERYSTRING_AUTH=False
+if os.environ.get('USE_S3', '').lower() == "true":
+    AWS_STORAGE_BUCKET_NAME = bucket_name
+    AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
+    AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
+    AWS_QUERYSTRING_AUTH = False
     MEDIA_URL = S3_URL + "/media/"
-    DEFAULT_FILE_STORAGE="storages.backends.s3boto3.S3Boto3Storage"
+    DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
 else:
     MEDIA_URL = '/media/'
 ADMIN_SITE_HEADER = "Keralarescue Dashboard"
 MEDIA_ROOT = 'media'
 
-#JWT REST Auth for API
+# JWT REST Auth for API
 REST_USE_JWT = True
 JWT_AUTH = {
     'JWT_EXPIRATION_DELTA': datetime.timedelta(days=20)
