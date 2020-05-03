@@ -1,17 +1,16 @@
 ### Subject of the issue
-Describe your issue here.
+Analysis of the Kerala flood with data analytics.
 
 ### Your environment
-* version of your python
-* which browser and its version
-* OS Type (iOS/Android/Linux/Windows)
+* python 2.7.14
+* windows 7
+* windows
 
 ### Steps to reproduce
-Tell us how to reproduce this issue. Please provide a working demo as a GIF, if possible.
+The output should be a graph and analysis of flood impact taken place in different districts of kerala
 
 ### Expected behaviour
-Tell us what and how exactly is it supposed to  happen
-
+It should be a graph with data from different districts
 ### Actual behaviour
-Tell us what happens instead or what went wrong
+
 
